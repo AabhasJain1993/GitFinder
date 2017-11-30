@@ -17,6 +17,7 @@ import java.util.List;
 
 public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder> {
 
+    public static final String TAG= "REPOSITORY LIST ADAPTER";
     private List<RepositoryItem> mRepositoryItemList;
 
     @Override
@@ -35,7 +36,7 @@ public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mRepositoryItemList.size();
     }
 
 }
