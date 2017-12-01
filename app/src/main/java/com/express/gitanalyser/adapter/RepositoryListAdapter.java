@@ -1,5 +1,6 @@
 package com.express.gitanalyser.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,11 @@ public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder
     public static final String TAG= "REPOSITORY LIST ADAPTER";
     private List<RepositoryItem> mRepositoryItemList;
 
+
+    public RepositoryListAdapter(List<RepositoryItem> list) {
+        mRepositoryItemList = list;
+    }
+
     @Override
     public RepositoryHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = null;
@@ -30,7 +36,7 @@ public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder
     @Override
     public void onBindViewHolder(RepositoryHolder holder, int position) {
         RepositoryItem item = mRepositoryItemList.get(position);
-        holder.bind(item.mName, item.mFullName, item.mWatchCount, item.mCommitCount);
+        holder.bind(item.getName(), item.getFullName(), item.getWatchCount(), item.getCommitCount());
         //holder.itemView.setOnClickListener();
     }
 

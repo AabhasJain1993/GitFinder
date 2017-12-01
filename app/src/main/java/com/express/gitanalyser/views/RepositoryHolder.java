@@ -2,6 +2,7 @@ package com.express.gitanalyser.views;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.express.gitanalyser.R;
@@ -15,6 +16,7 @@ public class RepositoryHolder extends RecyclerView.ViewHolder {
     TextView mName, mFullName;
     TextView mWatcherCount, mCommitCount;
 
+    ImageView mImageView;
 
     public RepositoryHolder(View view) {
         super(view);
