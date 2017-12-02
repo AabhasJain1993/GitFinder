@@ -1,4 +1,6 @@
-package com.express.gitanalyser.model;
+package com.express.gitanalyser.api;
+
+import com.express.gitanalyser.model.Repository;
 
 import java.util.List;
 

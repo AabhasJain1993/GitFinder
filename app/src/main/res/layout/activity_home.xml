@@ -12,8 +12,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview"
+    <com.express.gitanalyser.views.RepositoryListView
+        android:id="@+id/repo_list_view"
         android:layout_marginTop="10dp"
         android:layout_below="@id/searchbar"
         android:layout_width="match_parent"

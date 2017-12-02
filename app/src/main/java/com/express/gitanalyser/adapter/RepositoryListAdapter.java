@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.express.gitanalyser.R;
+import com.express.gitanalyser.interfaces.IRepositoryClickListener;
 import com.express.gitanalyser.model.RepositoryItem;
 import com.express.gitanalyser.views.RepositoryHolder;
 
@@ -20,17 +21,17 @@ public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder
 
     public static final String TAG= "REPOSITORY LIST ADAPTER";
     private List<RepositoryItem> mRepositoryItemList;
+    private IRepositoryClickListener mRepositoryClickListener = null;
 
-
-    public RepositoryListAdapter(List<RepositoryItem> list) {
+    public RepositoryListAdapter(IRepositoryClickListener iRepositoryClickListener, List<RepositoryItem> list) {
+        mRepositoryClickListener = iRepositoryClickListener;
         mRepositoryItemList = list;
     }
 
     @Override
     public RepositoryHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = null;
-        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.snippet_repository_card, parent, false);
-        return new RepositoryHolder(itemView, parent.getContext());
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.snippet_repository_card, parent, false);
+        return new RepositoryHolder(itemView, mRepositoryClickListener);
     }
 
     @Override

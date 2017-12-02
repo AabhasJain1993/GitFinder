@@ -1,4 +1,4 @@
-package com.express.gitanalyser.model;
+package com.express.gitanalyser.api;
 
 import com.facebook.stetho.okhttp.StethoInterceptor;
 import com.squareup.okhttp.OkHttpClient;

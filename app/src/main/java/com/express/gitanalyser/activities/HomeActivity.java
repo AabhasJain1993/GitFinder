@@ -1,21 +1,25 @@
 package com.express.gitanalyser.activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.express.gitanalyser.adapter.RepositoryListAdapter;
-import com.express.gitanalyser.model.APIClient;
+import com.express.gitanalyser.api.APIClient;
+import com.express.gitanalyser.interfaces.IRepositoryClickListener;
 import com.express.gitanalyser.model.Repository;
-import com.express.gitanalyser.model.RepositoryAPI;
+import com.express.gitanalyser.api.RepositoryAPI;
 import com.express.gitanalyser.model.RepositoryItem;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import com.express.gitanalyser.R;
+import com.express.gitanalyser.views.RepositoryListView;
 
 import java.util.List;
 
@@ -26,19 +30,17 @@ import retrofit.Callback;
 import retrofit.Response;
 import retrofit.Retrofit;
 
-import static android.R.id.list;
-
 /**
  * Created by root on 29/11/17.
  */
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements RepositoryListView.Listener{
 
-    @Bind(R.id.recyclerview)
-    RecyclerView mRecyclerView;
+    @Bind(R.id.repo_list_view)
+    RepositoryListView mRepositoryListView;
 
     private RepositoryListAdapter mRepositoryListAdapter;
-    private RepositoryAPI mAPIInterface;
+    private Context mContext = getBaseContext();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,36 +48,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRepositoryListView.setListener(this);
+    }
 
-
-
-        mAPIInterface = APIClient.getInstance().create(RepositoryAPI.class);
-
-        Call<Repository> call =  mAPIInterface.repositoryList("retrofit");
-
-        Log.d("Aabhas", "Aabhas");
-        call.enqueue(new Callback<Repository>() {
-            @Override
-            public void onResponse(Response<Repository> response, Retrofit retrofit) {
-                Log.d("Success : ", response.body().getCount() + "");
-                List<RepositoryItem> list ;
-                if(response.body().getCount()>10)
-                    list = response.body().getRepositoryItemList().subList(0,11);
-                else
-                    list = response.body().getRepositoryItemList();
-
-                mRepositoryListAdapter = new RepositoryListAdapter(list);
-                mRecyclerView.setAdapter(mRepositoryListAdapter);
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-                Log.d("Failure : ", "Failure");
-            }
-        });
-
+    @Override
+    public void onRepositorySelected(RepositoryItem repositoryItem) {
+        Toast.makeText(this, "Repositroy item " + repositoryItem.getName(), Toast.LENGTH_LONG).show();
     }
 }
