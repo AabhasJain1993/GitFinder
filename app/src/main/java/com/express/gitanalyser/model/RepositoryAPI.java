@@ -14,5 +14,5 @@ import retrofit.http.Query;
 public interface RepositoryAPI {
 
     @GET("search/repositories")
-    Call<List<RepositoryItem>> repositoryList(@Query("q") String queryField);
+    Call<Repository> repositoryList(@Query("q") String queryField);
 }

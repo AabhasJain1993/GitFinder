@@ -30,13 +30,13 @@ public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder
     public RepositoryHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = null;
         itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.snippet_repository_card, parent, false);
-        return new RepositoryHolder(itemView);
+        return new RepositoryHolder(itemView, parent.getContext());
     }
 
     @Override
     public void onBindViewHolder(RepositoryHolder holder, int position) {
         RepositoryItem item = mRepositoryItemList.get(position);
-        holder.bind(item.getName(), item.getFullName(), item.getWatchCount(), item.getCommitCount());
+        holder.bind(item.getName(), item.getFullName(), item.getWatchCount(), item.getCommitCount(), item.getmRepositoryOwner().getUserProfilePicUrl());
         //holder.itemView.setOnClickListener();
     }
 
