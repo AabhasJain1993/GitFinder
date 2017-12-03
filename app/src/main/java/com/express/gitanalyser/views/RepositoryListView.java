@@ -72,8 +72,6 @@ public class RepositoryListView extends RelativeLayout implements IRepositoryCli
 
         Call<Repository> call =  mAPIInterface.repositoryList("retrofit");
 
-        //Log.d("Aabhas", "Aabhas");
-
         call.enqueue(new Callback<Repository>() {
             List<RepositoryItem> list ;
             @Override

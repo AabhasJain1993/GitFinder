@@ -11,7 +11,7 @@ import java.util.List;
  * Created by root on 1/12/17.
  */
 
-public class Repository implements Parcelable {
+public class Repository {
 
     @SerializedName("total_count")
     int count;
@@ -34,13 +34,4 @@ public class Repository implements Parcelable {
         return repositoryItemList;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-    }
 }

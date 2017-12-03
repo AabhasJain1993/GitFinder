@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:id="@+id/repodetails_image" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/repoDetails_nameContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name : "
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:id="@+id/repoDetails_nameKey"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_toRightOf="@id/repoDetails_nameKey"
+            android:id="@+id/repoDetails_nameValue" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/repoDetails_projectContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Link : "
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:id="@+id/repoDetails_projectlink"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_toRightOf="@id/repoDetails_projectlink"
+            android:id="@+id/repoDetails_linkValue" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/repoDetails_descriptionContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description : "
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:id="@+id/repoDetails_description"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/repoDetails_description"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:id="@+id/repoDetails_descriptionValue" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/repoDetails_contributorContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contributors : "
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:id="@+id/repoDetails_contributor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/repoDetails_contributor"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:id="@+id/repoDetails_contributorValue" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

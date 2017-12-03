@@ -1,6 +1,7 @@
 package com.express.gitanalyser.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +40,6 @@ public class HomeActivity extends AppCompatActivity implements RepositoryListVie
     @Bind(R.id.repo_list_view)
     RepositoryListView mRepositoryListView;
 
-    private RepositoryListAdapter mRepositoryListAdapter;
     private Context mContext = getBaseContext();
 
     @Override
@@ -53,6 +53,9 @@ public class HomeActivity extends AppCompatActivity implements RepositoryListVie
 
     @Override
     public void onRepositorySelected(RepositoryItem repositoryItem) {
-        Toast.makeText(this, "Repositroy item " + repositoryItem.getName(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Repositroy item " + repositoryItem.getName(), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this,RepoDetailsActivity.class);
+        intent.putExtra("RepositoryItemData", repositoryItem);
+        startActivity(intent);
     }
 }

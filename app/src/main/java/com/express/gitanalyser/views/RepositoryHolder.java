@@ -51,6 +51,5 @@ public class RepositoryHolder extends RecyclerView.ViewHolder implements View.On
             mRepositoryClickListener.onRepositoryClick(position);
         else
             Toast.makeText(mContext, "Null click Listener", Toast.LENGTH_LONG).show();
-
     }
 }

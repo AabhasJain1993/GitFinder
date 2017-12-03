@@ -38,7 +38,6 @@ public class RepositoryListAdapter extends RecyclerView.Adapter<RepositoryHolder
     public void onBindViewHolder(RepositoryHolder holder, int position) {
         RepositoryItem item = mRepositoryItemList.get(position);
         holder.bind(item.getName(), item.getFullName(), item.getWatchCount(), item.getCommitCount(), item.getmRepositoryOwner().getUserProfilePicUrl());
-        //holder.itemView.setOnClickListener();
     }
 
     @Override
