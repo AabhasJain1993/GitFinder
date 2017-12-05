@@ -108,5 +108,9 @@
 
     </RelativeLayout>
 
+    <com.express.gitanalyser.views.ContributorListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contributor_listview" />
 
 </LinearLayout>

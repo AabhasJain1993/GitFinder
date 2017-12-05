@@ -73,7 +73,6 @@ public class RepositoryListView extends RelativeLayout implements IRepositoryCli
         Call<Repository> call =  mAPIInterface.repositoryList("retrofit");
 
         call.enqueue(new Callback<Repository>() {
-            List<RepositoryItem> list ;
             @Override
             public void onResponse(Response<Repository> response, Retrofit retrofit) {
                 //Log.d("Success : ", response.body().getCount() + "");

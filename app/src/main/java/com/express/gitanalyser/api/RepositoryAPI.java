@@ -17,4 +17,5 @@ public interface RepositoryAPI {
 
     @GET("search/repositories")
     Call<Repository> repositoryList(@Query("q") String queryField);
+
 }
