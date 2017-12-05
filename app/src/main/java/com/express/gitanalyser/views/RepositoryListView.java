@@ -15,6 +15,7 @@ import com.express.gitanalyser.api.RepositoryAPI;
 import com.express.gitanalyser.interfaces.IRepositoryClickListener;
 import com.express.gitanalyser.model.Repository;
 import com.express.gitanalyser.model.RepositoryItem;
+import com.express.gitanalyser.utils.ApiHelper;
 
 import java.util.List;
 
@@ -36,7 +37,6 @@ public class RepositoryListView extends RelativeLayout implements IRepositoryCli
     RepositoryListView mRepositoryListView;
 
     private RepositoryListAdapter mRepositoryListAdapter;
-    private RepositoryAPI mAPIInterface;
     private List<RepositoryItem> repositoryItemList;
     private Listener mListener = null;
 
@@ -67,10 +67,7 @@ public class RepositoryListView extends RelativeLayout implements IRepositoryCli
 
     void setDataFromAPI() {
 
-
-        mAPIInterface = APIClient.getInstance().create(RepositoryAPI.class);
-
-        Call<Repository> call =  mAPIInterface.repositoryList("retrofit");
+        Call<Repository> call =  ApiHelper.getAPInterface().repositoryList("retrofit");
 
         call.enqueue(new Callback<Repository>() {
             @Override

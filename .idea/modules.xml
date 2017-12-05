@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GitAnalyser.iml" filepath="$PROJECT_DIR$/GitAnalyser.iml" />
+      <module fileurl="file://D:\GitAnalyser\GitFinder\GitAnalyser.iml" filepath="D:\GitAnalyser\GitFinder\GitAnalyser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GitFinder.iml" filepath="$PROJECT_DIR$/GitFinder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\GitAnalyser\GitFinder\app\app.iml" filepath="D:\GitAnalyser\GitFinder\app\app.iml" />
     </modules>
   </component>
 </project>

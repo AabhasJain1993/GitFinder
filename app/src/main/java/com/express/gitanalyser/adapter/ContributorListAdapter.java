@@ -4,13 +4,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.express.gitanalyser.model.RepositoryItem;
+
 /**
  * Created by root on 5/12/17.
  */
 
 public class ContributorListAdapter extends BaseAdapter {
 
-    public ContributorListAdapter() {
+    public ContributorListAdapter(RepositoryItem repositoryItem) {
 
     }
 
