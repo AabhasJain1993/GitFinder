@@ -55,7 +55,7 @@ public class ContributorListView extends RelativeLayout {
             @Override
             public void onResponse(Response<List<Contributor>> response, Retrofit retrofit) {
                 mContributorsList = response.body();
-                mContributorListAdapter = new ContributorListAdapter(repositoryItem);
+                mContributorListAdapter = new ContributorListAdapter(mContributorsList);
             }
 
             @Override
