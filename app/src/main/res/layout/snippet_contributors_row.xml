@@ -3,39 +3,116 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="100dp"
     android:layout_weight="5"
     android:paddingTop="6dp"
     android:paddingBottom="6dp">
 
-    <include
+    <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        layout="@layout/snippet_contributor" />
+        android:layout_weight="1">
 
-    <include
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        layout="@layout/snippet_contributor" />
+        <include
+            layout="@layout/snippet_contributor"
+            android:id="@+id/contributor1_image"/>
 
-    <include
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        layout="@layout/snippet_contributor" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Person 1"
+            android:textColor="@color/black"
+            android:layout_below="@id/contributor1_image"
+            android:gravity="center_horizontal"
+            android:id="@+id/contributor1"
+            android:layout_centerHorizontal="true"/>
 
-    <include
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        layout="@layout/snippet_contributor" />
+      </RelativeLayout>
 
-    <include
+    <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        layout="@layout/snippet_contributor" />
+        android:layout_weight="1">
+
+        <include
+            layout="@layout/snippet_contributor"
+            android:id="@+id/contributor2_image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Person 1"
+            android:textColor="@color/black"
+            android:layout_below="@id/contributor2_image"
+            android:gravity="center_horizontal"
+            android:id="@+id/contributor2"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <include
+            layout="@layout/snippet_contributor"
+            android:id="@+id/contributor3_image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Person 1"
+            android:textColor="@color/black"
+            android:layout_below="@id/contributor3_image"
+            android:gravity="center_horizontal"
+            android:id="@+id/contributor3"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <include
+            layout="@layout/snippet_contributor"
+            android:id="@+id/contributor4_image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Person 1"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/contributor4_image"
+            android:id="@+id/contributor4"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <include
+            layout="@layout/snippet_contributor"
+            android:id="@+id/contributor5_image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Person 1"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/contributor5_image"
+            android:id="@+id/contributor5"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

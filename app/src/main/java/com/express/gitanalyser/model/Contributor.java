@@ -17,15 +17,15 @@ public class Contributor {
     @SerializedName("avatar_url")
     String mAvatarUrl;
 
-    String getContributorName() {
+    public String getContributorName() {
         return mContributorName;
     }
 
-    int getContributions() {
+    public int getContributions() {
         return mContributions;
     }
 
-    String getContributorUrl() {
+    public String getContributorUrl() {
         return mAvatarUrl;
     }
 }

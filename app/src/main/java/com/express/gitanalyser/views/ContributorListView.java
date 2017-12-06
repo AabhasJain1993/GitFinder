@@ -2,6 +2,7 @@ package com.express.gitanalyser.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
@@ -25,13 +26,14 @@ import retrofit.Retrofit;
  * Created by root on 5/12/17.
  */
 
-public class ContributorListView extends RelativeLayout {
+public class ContributorListView extends ListView {
 
     ContributorListAdapter mContributorListAdapter;
     List<Contributor> mContributorsList;
+    ContributorListView mContributorListView;
 
-    @Bind(R.id.progress_bar)
-    ProgressBar mProgressBar;
+//    @Bind(R.id.progress_bar)
+//    ProgressBar mProgressBar;
 
     public ContributorListView(Context context) {
         this(context, null);
@@ -45,6 +47,7 @@ public class ContributorListView extends RelativeLayout {
     void initView(Context context) {
         inflate(context, R.layout.snippet_contributor_listivew, this);
         ButterKnife.bind(this);
+        mContributorListView = this;
     }
 
     public void setRepositoryData(final RepositoryItem repositoryItem) {
@@ -56,6 +59,7 @@ public class ContributorListView extends RelativeLayout {
             public void onResponse(Response<List<Contributor>> response, Retrofit retrofit) {
                 mContributorsList = response.body();
                 mContributorListAdapter = new ContributorListAdapter(mContributorsList);
+                mContributorListView.setAdapter(mContributorListAdapter);
             }
 
             @Override

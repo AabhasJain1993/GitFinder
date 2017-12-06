@@ -10,14 +10,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/contributor_list"
         android:divider="@color/transparent"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
-    <ProgressBar
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        style="?android:attr/progress"
-        android:id="@+id/progress_bar"
-        android:layout_centerInParent="true"
-        />
+    <!--<ProgressBar-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:id="@+id/progress_bar"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--/>-->
 
 </RelativeLayout>
